@@ -58,3 +58,5 @@ target_link_libraries(local_planner_main
        ${catkin_LIBRARIES}
 	   ${PCL_LIBRARIES}
 	)
+add_executable(pub_goal src/pub_goal.cpp)
+target_link_libraries(pub_goal ${catkin_LIBRARIES})
