@@ -281,6 +281,7 @@ void Local_Planner::control_cb(const ros::TimerEvent& e)
         //Command_Now.source = NODE_NAME;
         //Command_Now.Reference_State.Move_mode           = px4_command::PositionReference::XYZ_POS;
         //Command_Now.Reference_State.Move_frame          = px4_command::PositionReference::ENU_FRAME;
+        Command_Now.Reference_State.Sub_mode  = command_to_mavros::XY_VEL_Z_POS;     //速度移动系
         Command_Now.Reference_State.position_ref[0]     = goal_pos[0];
         Command_Now.Reference_State.position_ref[1]     = goal_pos[1];
         Command_Now.Reference_State.position_ref[2]     = goal_pos[2];
@@ -304,6 +305,7 @@ void Local_Planner::control_cb(const ros::TimerEvent& e)
     //Command_Now.source = NODE_NAME;
     //Command_Now.Reference_State.Move_mode           = px4_command::PositionReference::XY_VEL_Z_POS;
     //Command_Now.Reference_State.Move_frame          = px4_command::PositionReference::ENU_FRAME;
+    Command_Now.Reference_State.Sub_mode  = command_to_mavros::XY_VEL_Z_POS;     //速度移动系
     Command_Now.Reference_State.velocity_ref[0]     = desired_vel[0];
     Command_Now.Reference_State.velocity_ref[1]     = desired_vel[1];
     Command_Now.Reference_State.position_ref[2]     = fly_height_2D;
