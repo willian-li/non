@@ -63,3 +63,6 @@ target_link_libraries(pub_goal ${catkin_LIBRARIES})
 
 add_executable(test src/test.cpp)
 target_link_libraries(test ${catkin_LIBRARIES})
+
+add_executable(channel src/channel.cpp)
+target_link_libraries(channel ${catkin_LIBRARIES})
