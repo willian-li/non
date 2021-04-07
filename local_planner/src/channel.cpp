@@ -36,7 +36,7 @@ int main(int argc, char **argv)
 	cout << "put channels 7"<<endl;
         cin >> drop_cmd.channels[6];
 	cout << "put channels 8"<<endl;
-        cin >> drop_cmd.channels[8];
+        cin >> drop_cmd.channels[7];
 
         drop_pub.publish(drop_cmd);
  

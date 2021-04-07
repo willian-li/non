@@ -84,7 +84,7 @@ int main(int argc, char **argv)
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>参数读取<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     nh.param<float>("height_square", height_square, 1.0);
     nh.param<float>("sleep_time", sleep_time, 10.0);
-    nh.param<float>("pay_height", sleep_time, 0.2);
+    nh.param<float>("pay_height", sleep_time, 0.5);
     nh.param<float>("limit_time", limit_time, 10.0);
     nh.param<float>("min_distance", min_distance, 0.2);
 
@@ -97,8 +97,8 @@ int main(int argc, char **argv)
     drop_cmd.channels[3] = 0;
     drop_cmd.channels[4] = 0;
     drop_cmd.channels[5] = 0;
-    drop_cmd.channels[6] = 0;
-    drop_cmd.channels[7] = 1600;
+    drop_cmd.channels[6] = 1500;
+    drop_cmd.channels[7] = 1500;
 
 
     point0[0] = 0;
@@ -114,19 +114,19 @@ int main(int argc, char **argv)
     point2[2] = pay_height;
 
     point3[0] = 0;
-    point3[1] = 2;
+    point3[1] = -2;
     point3[2] = height_square;
 
     point4[0] = 0;
-    point4[1] = 2;
+    point4[1] = -2;
     point4[2] = pay_height;
 
     point5[0] = 2;
-    point5[1] = 2;
+    point5[1] = -2;
     point5[2] = height_square;
 
     point6[0] = 2;
-    point6[1] = 2;
+    point6[1] = -2;
     point6[2] = pay_height;
 
 
@@ -256,7 +256,8 @@ int main(int argc, char **argv)
     //reset the flag
     switch_flag = 0;
     time_sec = 0;
-
+    drop_cmd.channels[6] = 1500;
+    drop_cmd.channels[7] = 800;
     //Drop
     //投放货物
     while (time_sec < 3)
@@ -345,7 +346,7 @@ int main(int argc, char **argv)
     //reset the flag
     switch_flag = 0;
     time_sec = 0;
-
+    drop_cmd.channels[6] = 800;
     //Drop
     //投放货物
     while (time_sec < 3)
@@ -434,7 +435,7 @@ int main(int argc, char **argv)
     //reset the flag
     switch_flag = 0;
     time_sec = 0;
-
+    drop_cmd.channels[6] = 800;
     //Drop
     //投放货物
     while (time_sec < 3)
